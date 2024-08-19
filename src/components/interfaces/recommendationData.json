@@ -1,0 +1,17 @@
+[
+  {
+    "location": "Home",
+    "rainRating": 8,
+    "sunnyRating": 3
+  },
+  {
+    "location": "Forest",
+    "rainRating": 1,
+    "sunnyRating": 10
+  },
+  {
+    "location": "Beach",
+    "rainRating": 1,
+    "sunnyRating": 8
+  }
+]
