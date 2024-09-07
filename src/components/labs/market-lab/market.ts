@@ -34,32 +34,41 @@ export class Market {
       this.netPresentValue().toString(),
       this.riskRatingIndex().toString(),
       this.semiSquareVariation().toFixed(3),
-      this.negativeSemiSquareVariation().toFixed(3),
       this.variationCoefficient().toFixed(3),
+      this.negativeSemiSquareVariation().toFixed(3),
       this.negativeVariationCoefficient().toFixed(3)
     ];
   }
 
+  public calculateLoss(): number {
+    return -(this._posIncome - this._negIncome);
+  }
+
   public netPresentValue(): number {
-    return this._posProbability * this._posIncome + this._negProbability * this._negIncome;
+    return (this._posProbability * this._posIncome) + (this._negProbability * this.calculateLoss());
   }
 
   public riskRatingIndex(): number {
-    return Math.pow(this._posIncome - this.netPresentValue(), 2) * this._posProbability + Math.pow(this._negIncome - this.netPresentValue(), 2) * this._negProbability;
+    return Math.pow(this._posIncome - this.netPresentValue(), 2) * this._posProbability + Math.pow(this.calculateLoss() - this.netPresentValue(), 2) * this._negProbability;
   }
 
   public semiSquareVariation(): number {
     return Math.sqrt(this.riskRatingIndex());
-  }
-  public negativeSemiSquareVariation(): number {
-    return Math.sqrt(Math.pow(this._negIncome - this.netPresentValue(), 2) * this._negProbability);
   }
 
   public variationCoefficient(): number {
     return this.semiSquareVariation() / this.netPresentValue();
   }
 
+  public negativeSemiSquareVariation(): number {
+    return Math.sqrt(Math.pow(this.calculateLoss() - this.netPresentValue(), 2) * this._negProbability);
+  }
+
   public negativeVariationCoefficient(): number {
     return this.negativeSemiSquareVariation() / this.netPresentValue();
+  }
+
+  public approximatedRisk(): number {
+    return this.semiSquareVariation() - this.negativeSemiSquareVariation() + this.variationCoefficient() - this.negativeVariationCoefficient();
   }
 }

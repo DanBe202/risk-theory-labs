@@ -21,4 +21,16 @@ export class MarketsList {
       return new Market(currentItem);
     });
   }
+
+  public leastRiskStore(): Market {
+    return this._markets.reduce((accumulator, currentValue) => {
+      if (!accumulator) {
+        return currentValue;
+      }
+      if (accumulator.approximatedRisk() > currentValue.approximatedRisk()) {
+        return currentValue;
+      }
+      return accumulator;
+    })
+  }
 }

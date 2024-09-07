@@ -20,21 +20,32 @@ const resultNames = [
   'Net present value',
   'Risk rating index',
   'Semi square variation',
-  'Negative semi square variation',
   'Variation coefficient',
+  'Negative semi square variation',
   'Negative variation coefficient',
 ];
 
 </script>
 <template>
-  <Table
-    :data="tableData"
-    :names="dataNames">
-  </Table>
-  <Table
-    :data="tableResults"
-    :names="resultNames">
-  </Table>
+    <div class="flex flex-col gap-10 items-start">
+      <p>
+        Collected data
+      </p>
+      <Table
+        :data="tableData"
+        :names="dataNames">
+      </Table>
+      <p>
+        Risk results
+      </p>
+      <Table
+        :data="tableResults"
+        :names="resultNames">
+      </Table>
+      <p>
+        The least risky store is in {{ markets.leastRiskStore().location }}.
+      </p>
+    </div>
 </template>
 
 <style scoped></style>
