@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Table from '../../components/common/Table.vue';
+import Table from '../../components/common/DataTable.vue';
 import { MarketsList } from '../../components/labs/market-lab/markets.list.js';
 import marketData from '../../components/interfaces/lab2-data/market.data.json';
 
