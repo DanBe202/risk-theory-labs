@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { RecommendationCalculator } from '../objects/recommendation.calculator.ts';
 
 interface Props {
-  recommendation: RecommendationCalculator;
-  rainProbability: number;
+  itemData: [];
 }
 
 defineProps<Props>();
@@ -11,10 +9,7 @@ defineProps<Props>();
 
 <template>
   <tr>
-    <th>{{ recommendation.location }}</th>
-    <td>{{ recommendation.rainRating }}</td>
-    <td>{{ recommendation.sunnyRating }}</td>
-    <td>{{ recommendation.calculateRecommendation(rainProbability) }}</td>
+    <td v-for="item in itemData">{{ item }}</td>
   </tr>
 </template>
 

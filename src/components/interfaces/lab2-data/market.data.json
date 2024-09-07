@@ -1,0 +1,16 @@
+[
+  {
+    "location" : "Chernivtsi",
+    "positiveProbability": "0.4",
+    "positiveIncome": "40",
+    "negativeProbability": "0.6",
+    "negativeIncome": "30"
+  },
+  {
+    "location" : "Lviv",
+    "positiveProbability": "0.8",
+    "positiveIncome": "35",
+    "negativeProbability": "0.2",
+    "negativeIncome": "25"
+  }
+]

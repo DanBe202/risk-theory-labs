@@ -1,15 +1,12 @@
 <script setup lang="ts">
 import TableItem from './TableItem.vue';
-import recommendationsData from '../interfaces/recommendationData.json';
-import { Recommendations } from '../objects/recommendations.ts';
 
 interface Props {
-  rainProbability: number;
+  data: [];
 }
 
 defineProps<Props>();
 
-const recommendations: Recommendations = new Recommendations(recommendationsData);
 </script>
 
 <template>
@@ -24,9 +21,8 @@ const recommendations: Recommendations = new Recommendations(recommendationsData
       </thead>
       <tbody>
       <TableItem
-        v-for="item in recommendations.recommendations"
-        :recommendation="item"
-        :rain-probability="rainProbability">
+        v-for="item in data"
+        :itemData="item">
       </TableItem>
       </tbody>
     </table>

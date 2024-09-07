@@ -13,11 +13,6 @@ defineProps<Props>();
 
 <template>
   <div class="card card-compact bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
-    <figure>
-      <img
-        :src="image"
-        :alt="title" />
-    </figure>
     <div class="card-body">
       <h2 class="card-title">{{ title }}</h2>
       <p>{{ description }}</p>
