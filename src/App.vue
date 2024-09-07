@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import RecommendationsView from './views/labs/RecommendationsView.vue';
 import NavBar from './components/common/NavBar.vue';
 </script>
 

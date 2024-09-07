@@ -19,6 +19,16 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/labs',
+      children: [
+        {
+          path: 'market-success',
+          name: 'market-success',
+          component: () => import('../views/labs/MarketSuccessView.vue'),
+        },
+      ],
+    },
   ],
 });
 

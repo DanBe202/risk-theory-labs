@@ -3,7 +3,7 @@ import { watch } from 'vue';
 
 const model = defineModel<number>();
 
-watch(model,() => {
+watch(model, () => {
   if (model.value! < 0) {
     model.value = 0;
   }

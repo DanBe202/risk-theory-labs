@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import AppLink from './AppLink.vue';
-
 </script>
 
 <template>

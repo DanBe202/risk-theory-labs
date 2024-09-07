@@ -12,16 +12,25 @@ const recommendations = computed(() => {
 });
 
 const tableData = computed(() => recommendations.value.toString);
+const names = [
+  'Location',
+  'Sunny rating',
+  'Rainy rating',
+  'Recommendation',
+];
 
 </script>
 
 <template>
-  <Table
-    :data="tableData">
-  </Table>
-  <TextInput
-    v-model="rainProbability">
-  </TextInput>
+  <div class="flex flex-col gap-10 items-center">
+    <Table
+      :data="tableData"
+      :names="names">
+    </Table>
+    <TextInput
+      v-model="rainProbability">
+    </TextInput>
+  </div>
 </template>
 
 <style scoped></style>

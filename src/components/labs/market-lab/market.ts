@@ -33,10 +33,10 @@ export class Market {
       this._location,
       this.netPresentValue().toString(),
       this.riskRatingIndex().toString(),
-      this.semiSquareVariation().toString(),
-      this.negativeSemiSquareVariation().toString(),
-      this.variationCoefficient().toString(),
-      this.negativeSemiSquareVariation.toString()
+      this.semiSquareVariation().toFixed(3),
+      this.negativeSemiSquareVariation().toFixed(3),
+      this.variationCoefficient().toFixed(3),
+      this.negativeVariationCoefficient().toFixed(3)
     ];
   }
 
@@ -62,5 +62,4 @@ export class Market {
   public negativeVariationCoefficient(): number {
     return this.negativeSemiSquareVariation() / this.netPresentValue();
   }
-
 }

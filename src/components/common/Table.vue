@@ -3,6 +3,7 @@ import TableItem from './TableItem.vue';
 
 interface Props {
   data: [];
+  names: [];
 }
 
 defineProps<Props>();
@@ -14,9 +15,9 @@ defineProps<Props>();
     <table class="table">
       <thead>
       <tr>
-        <th></th>
-        <th>Rain</th>
-        <th>Sunny</th>
+        <th v-for="name in names">
+          {{ name }}
+        </th>
       </tr>
       </thead>
       <tbody>
