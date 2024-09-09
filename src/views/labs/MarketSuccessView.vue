@@ -21,8 +21,6 @@ const resultNames = [
   'Risk rating index',
   'Semi square variation',
   'Variation coefficient',
-  'Negative semi square variation',
-  'Negative variation coefficient',
 ];
 
 </script>
