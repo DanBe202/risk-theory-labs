@@ -29,6 +29,16 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/labs',
+      children: [
+        {
+          path: 'job-choice',
+          name: 'job-choice',
+          component: () => import('../views/labs/JobChoiceView.vue'),
+        },
+      ],
+    },
   ],
 });
 

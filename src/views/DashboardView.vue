@@ -13,6 +13,11 @@ const cards = ref([
     description: 'Closing a market point based on probability of success',
     link: '/labs/market-success',
   },
+  {
+    title: 'Job Choice',
+    description: 'Chosing job based on income and risk',
+    link: '/labs/job-choice',
+  },
 
 ]);
 </script>
